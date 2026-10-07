@@ -1,0 +1,11 @@
+{
+  "name": "bandamart-monorepo",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm start --prefix backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "seed:categories": "npm run seed:categories --prefix backend",
+    "install:all": "npm install --prefix frontend && npm install --prefix backend"
+  }
+}

@@ -1,0 +1,674 @@
+/* ============================================
+   BandaMart — Organic Vitality Design System
+   Extracted from Stitch Project 8138326070276916443
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* --- CSS Custom Properties --- */
+:root {
+  /* Primary (Botanical Deep Green) */
+  --primary: #1C3B2B;
+  --on-primary: #ffffff;
+  --primary-container: #EAF2E8;
+  --on-primary-container: #1C3B2B;
+  --primary-fixed: #D8E8D5;
+  --primary-fixed-dim: #A8C8A3;
+  --on-primary-fixed: #1C3B2B;
+  --on-primary-fixed-variant: #2E7D32;
+  --inverse-primary: #A8C8A3;
+
+  /* Secondary (Natural Leaf Green Accent) */
+  --secondary: #2E7D32;
+  --on-secondary: #ffffff;
+  --secondary-container: #EAF2E8;
+  --on-secondary-container: #1C3B2B;
+  --secondary-fixed: #D8E8D5;
+  --secondary-fixed-dim: #A8C8A3;
+  --on-secondary-fixed: #1C3B2B;
+  --on-secondary-fixed-variant: #2E7D32;
+
+  /* Tertiary (Warm Sand Gold) */
+  --tertiary: #C29B38;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #FAF5E8;
+  --on-tertiary-container: #4A3A10;
+
+  /* Error */
+  --error: #cc3333;
+  --on-error: #ffffff;
+  --error-container: #fbebeb;
+  --on-error-container: #661111;
+
+  /* Surface & Background (Botanical Cream & Off-white) */
+  --background: #F8F6F0;
+  --on-background: #1C3B2B;
+  --surface: #ffffff;
+  --on-surface: #1C3B2B;
+  --surface-variant: #EAF2E8;
+  --on-surface-variant: #2E7D32;
+  --surface-dim: #F4F1E8;
+  --surface-bright: #ffffff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #FAF8F3;
+  --surface-container: #F8F6F0;
+  --surface-container-high: #EAE6DC;
+  --surface-container-highest: #DCD6C8;
+  --surface-tint: #2E7D32;
+  --inverse-surface: #1C3B2B;
+  --inverse-on-surface: #ffffff;
+
+  /* Outline */
+  --outline: #EAE6DC;
+  --outline-variant: #F0ECE2;
+
+  /* Spacing */
+  --space-unit: 4px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --container-padding: 20px;
+  --grid-gutter: 16px;
+
+  /* Border Radius (Round & premium) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows (Subtle & organic) */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-xl: 0 12px 32px rgba(0,0,0,0.1);
+  --shadow-top: 0 -2px 10px rgba(0,0,0,0.04);
+
+  /* Transitions (Smooth & premium) */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.35s ease;
+  --transition-spring: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Z-index layers */
+  --z-base: 1;
+  --z-sticky: 10;
+  --z-cart-bar: 30;
+  --z-nav: 40;
+  --z-header: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+}
+
+/* --- Global Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--on-surface);
+  line-height: 1.5;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --- Typography System --- */
+.text-headline-xl {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-headline-lg {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.text-headline-lg-mobile {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.text-title-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.text-body-lg {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.text-body-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.text-label-sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+}
+
+/* --- Material Symbols --- */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Shimmer animation for icon skeletons */
+@keyframes icon-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Premium skeleton placeholder styling before the font finishes loading */
+html:not(.icons-loaded) .material-symbols-outlined {
+  color: transparent !important;
+  background: linear-gradient(
+    90deg,
+    var(--surface-container, #f1f5f9) 25%,
+    var(--surface-container-high, #e2e8f0) 50%,
+    var(--surface-container, #f1f5f9) 75%
+  );
+  background-size: 200% 100%;
+  animation: icon-shimmer 1.5s infinite linear;
+  border-radius: var(--radius-md, 4px);
+  width: 1em;
+  height: 1em;
+  min-width: 1em;
+  min-height: 1em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Ensure any nested text or elements are completely hidden */
+html:not(.icons-loaded) .material-symbols-outlined * {
+  visibility: hidden !important;
+}
+
+/* --- Utility Classes --- */
+
+/* Scrollbar hiding */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Truncate text */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --- Animations (Disabled for Premium Clean Aesthetic) --- */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 1; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 1; transform: none; }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 1; transform: none; }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes slideUp {
+  from { transform: none; }
+  to { transform: none; }
+}
+
+@keyframes slideDown {
+  from { transform: none; }
+  to { transform: none; }
+}
+
+@keyframes float {
+  0%, 100% { transform: none; }
+  50% { transform: none; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes scaleIn {
+  from { transform: none; opacity: 1; }
+  to { transform: none; opacity: 1; }
+}
+
+@keyframes cartBounce {
+  0%, 100% { transform: none; }
+  50% { transform: none; }
+}
+
+/* Animation utilities */
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--surface-container) 25%, var(--surface-container-high) 50%, var(--surface-container) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-fade-in { animation: none; }
+.animate-fade-in-up { animation: none; }
+.animate-fade-in-scale { animation: none; }
+.animate-slide-up { animation: none; }
+.animate-float { animation: none; }
+.animate-spin { animation: spin 1s linear infinite; }
+.animate-pulse { animation: pulse 1.5s ease infinite; }
+.animate-scale-in { animation: none; }
+.animate-cart-bounce { animation: none; }
+
+/* --- Skeleton Loader --- */
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-container) 25%, var(--surface-container-high) 50%, var(--surface-container) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-text {
+  height: 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+
+.skeleton-text.short { width: 60%; }
+.skeleton-text.medium { width: 80%; }
+.skeleton-text.full { width: 100%; }
+
+.skeleton-image {
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+}
+
+.skeleton-circle {
+  border-radius: var(--radius-full);
+}
+
+/* --- Page Transition --- */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* --- Toast Notification --- */
+@keyframes botanisToastSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-24px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+.botanis-toast-container {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.botanis-toast {
+  background: rgba(28, 59, 43, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #FFFFFF;
+  padding: 12px 22px;
+  border-radius: 50px;
+  border: 1px solid rgba(194, 155, 56, 0.5);
+  box-shadow: 0 16px 36px rgba(28, 59, 43, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  animation: botanisToastSlideDown 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  white-space: nowrap;
+  max-width: 90vw;
+}
+
+.toast {
+  display: none;
+}
+
+/* --- Botanís Voucher Coupon Ticket Cards --- */
+.botanis-voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.botanis-voucher-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(28, 59, 43, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.botanis-voucher-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(28, 59, 43, 0.12);
+}
+
+/* Ticket Side Notch Cutouts */
+.botanis-voucher-notch-left,
+.botanis-voucher-notch-right {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #F8F6F0;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.botanis-voucher-notch-left {
+  left: -10px;
+  bottom: 64px;
+}
+
+.botanis-voucher-notch-right {
+  right: -10px;
+  bottom: 64px;
+}
+
+/* --- Responsive Max Width Container & PC Layout --- */
+.app-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100dvh;
+  background: #F8F6F0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    max-width: 480px;
+    padding-bottom: 85px;
+  }
+}
+
+@media (min-width: 769px) {
+  .app-container {
+    max-width: 100%;
+    padding-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  body {
+    background: #F8F6F0 !important;
+  }
+}
+
+.botanis-main-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .botanis-main-content {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+
+/* --- Scrollbar for desktop --- */
+@media (min-width: 481px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F6F0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D2E2CF;
+    border-radius: var(--radius-full);
+  }
+}
+
+@keyframes textFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-text-fade {
+  animation: textFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes imageFade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.animate-image-fade {
+  animation: imageFade 0.4s ease-out forwards;
+}
+
+/* --- Floating WhatsApp Button --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  color: #ffffff !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  z-index: 95;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 95px;
+    right: 16px;
+  }
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 12px;
+  }
+}
+
+/* Admin Responsive Forms */
+.admin-price-unit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.admin-variant-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 40px;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .admin-price-unit-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .admin-price-unit-row > div:last-child {
+    grid-column: span 2;
+  }
+
+  .admin-variant-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 10px;
+    background: var(--surface-container-low);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--outline-variant);
+  }
+  .admin-variant-row input:first-of-type {
+    grid-column: span 2;
+  }
+  .admin-variant-row button {
+    grid-column: span 2;
+    width: 100% !important;
+    height: 32px !important;
+  }
+}
+
+/* Hide Footer on Mobile View as requested */
+@media (max-width: 768px) {
+  .botanis-footer {
+    display: none !important;
+  }
+}
+
+/* Botanis Products Grid: 2 per row on mobile, 5 per row on desktop */
+.botanis-products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+@media (min-width: 769px) {
+  .botanis-products-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+}
+

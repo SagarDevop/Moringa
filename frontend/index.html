@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#1C3B2B" />
+    <meta name="description" content="Botanís — Your Trusted Path to Healthy Living. Premium natural wellness superfoods, moringa powders, tablets, and natural supplements." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Botanís" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        if ('fonts' in document) {
+          var timeout = setTimeout(function() {
+            document.documentElement.classList.add('icons-loaded');
+          }, 2000);
+          document.fonts.load('24px "Material Symbols Outlined"').then(function() {
+            clearTimeout(timeout);
+            document.documentElement.classList.add('icons-loaded');
+          }).catch(function() {
+            clearTimeout(timeout);
+            document.documentElement.classList.add('icons-loaded');
+          });
+        } else {
+          document.documentElement.classList.add('icons-loaded');
+        }
+      })();
+    </script>
+    <title>Botanís — Your Trusted Path to Healthy Living</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#ffffff"/>
+  <g transform="translate(96, 96) scale(2.6666)">
+    <!-- Handle -->
+    <path
+      d="M44,40 C44,15 76,15 76,40"
+      stroke="#4caf50"
+      stroke-width="6"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Bag Body (Letter B) -->
+    <path
+      d="M36,36 H74 C86,36 94,44 94,54 C94,62 88,66 82,66 C89,66 96,72 96,82 C96,92 86,96 74,96 H36 Z"
+      fill="#164b2b"
+    />
+
+    <!-- White Cutout -->
+    <path
+      d="M49,48 H68 C74,48 76,51 76,56 V60 C76,65 74,68 68,68 H49 Z"
+      fill="#ffffff"
+    />
+
+    <!-- Letter M inside Cutout -->
+    <path
+      d="M54,64 V54 L62,60 L70,54 V64"
+      stroke="#4caf50"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+
+    <!-- Rivets -->
+    <circle cx="44" cy="40" r="4.5" fill="#ffffff" stroke="#4caf50" stroke-width="1.5" />
+    <circle cx="76" cy="40" r="4.5" fill="#ffffff" stroke="#4caf50" stroke-width="1.5" />
+  </g>
+</svg>
