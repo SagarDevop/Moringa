@@ -125,8 +125,31 @@ export default function Offers() {
   const [toastMsg, setToastMsg] = useState('');
   const [copiedCode, setCopiedCode] = useState('');
 
+  const fallbackCopy = (text) => {
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      textArea.style.top = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    } catch (err) {}
+  };
+
   const handleCopyCode = (code) => {
-    navigator.clipboard.writeText(code);
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code).catch(() => fallbackCopy(code));
+      } else {
+        fallbackCopy(code);
+      }
+    } catch (err) {
+      fallbackCopy(code);
+    }
     setCopiedCode(code);
     setToastMsg(`Coupon code "${code}" copied to clipboard! 📋`);
     setTimeout(() => {

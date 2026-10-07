@@ -107,16 +107,21 @@
 }
 
 /* --- Global Reset --- */
+/* --- Global Reset & Butter-Smooth Touch Scroll --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -128,6 +133,19 @@ body {
   line-height: 1.5;
   min-height: 100dvh;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+}
+
+/* Hardware GPU Acceleration for zero-lag mobile scrolling */
+header,
+.botanis-toast-container,
+.whatsapp-float,
+[style*="position: sticky"],
+[style*="position: fixed"] {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 img {
