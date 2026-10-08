@@ -3,13 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-// Unregister any active service worker to prevent browser device permission prompts
+// Register Service Worker for PWA installation support
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then((registrations) => {
-    for (let registration of registrations) {
-      registration.unregister();
-    }
-  }).catch(() => {});
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then((registration) => {
+      console.log('Botanís PWA ServiceWorker registered with scope:', registration.scope);
+    }).catch((err) => {
+      console.warn('ServiceWorker registration failed:', err);
+    });
+  });
 }
 
 createRoot(document.getElementById('root')).render(

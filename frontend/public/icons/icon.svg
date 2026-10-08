@@ -1,39 +1,9 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="128" fill="#ffffff"/>
-  <g transform="translate(96, 96) scale(2.6666)">
-    <!-- Handle -->
-    <path
-      d="M44,40 C44,15 76,15 76,40"
-      stroke="#4caf50"
-      stroke-width="6"
-      stroke-linecap="round"
-      fill="none"
-    />
-
-    <!-- Bag Body (Letter B) -->
-    <path
-      d="M36,36 H74 C86,36 94,44 94,54 C94,62 88,66 82,66 C89,66 96,72 96,82 C96,92 86,96 74,96 H36 Z"
-      fill="#164b2b"
-    />
-
-    <!-- White Cutout -->
-    <path
-      d="M49,48 H68 C74,48 76,51 76,56 V60 C76,65 74,68 68,68 H49 Z"
-      fill="#ffffff"
-    />
-
-    <!-- Letter M inside Cutout -->
-    <path
-      d="M54,64 V54 L62,60 L70,54 V64"
-      stroke="#4caf50"
-      stroke-width="3.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-
-    <!-- Rivets -->
-    <circle cx="44" cy="40" r="4.5" fill="#ffffff" stroke="#4caf50" stroke-width="1.5" />
-    <circle cx="76" cy="40" r="4.5" fill="#ffffff" stroke="#4caf50" stroke-width="1.5" />
-  </g>
+  <rect width="512" height="512" rx="120" fill="#1C3B2B"/>
+  <circle cx="256" cy="256" r="220" stroke="#D4AF37" stroke-width="6" stroke-dasharray="16 8"/>
+  <path d="M256 100 C330 100, 380 170, 380 256 C380 342, 310 410, 256 430 C202 410, 132 342, 132 256 C132 170, 182 100, 256 100 Z" fill="#2E7D32" opacity="0.95"/>
+  <path d="M256 100 C256 180, 256 340, 256 430" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 200 Q320 160, 350 180" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 260 Q192 220, 162 240" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 320 Q310 290, 330 300" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
 </svg>

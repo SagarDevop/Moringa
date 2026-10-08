@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext';
 import { ProductProvider } from './context/ProductContext';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import SwipeNavigationWrapper from './components/SwipeNavigationWrapper';
+import PwaInstallPrompt from './components/PwaInstallPrompt';
 
 // Home page loaded statically for instant above-the-fold render
 import Home from './pages/Home';
@@ -38,6 +39,7 @@ export default function App() {
               </Routes>
             </Suspense>
             <WhatsAppFloat />
+            <PwaInstallPrompt />
           </SwipeNavigationWrapper>
         </CartProvider>
       </ProductProvider>
