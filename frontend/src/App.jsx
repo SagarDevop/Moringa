@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { ProductProvider } from './context/ProductContext';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import SwipeNavigationWrapper from './components/SwipeNavigationWrapper';
 
 import Home from './pages/Home';
 import CategoryList from './pages/CategoryList';
@@ -37,38 +38,40 @@ export default function App() {
     <BrowserRouter>
       <ProductProvider>
         <CartProvider>
-          <Routes>
-            {/* Customer Routes */}
-            <Route path="/" element={<Home />} />
-            <Route path="/categories" element={<CategoryList />} />
-            <Route path="/category/:categoryId" element={<ProductListing />} />
-            <Route path="/product/:productId" element={<ProductDetail />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/offers" element={<Offers />} />
+          <SwipeNavigationWrapper>
+            <Routes>
+              {/* Customer Routes */}
+              <Route path="/" element={<Home />} />
+              <Route path="/categories" element={<CategoryList />} />
+              <Route path="/category/:categoryId" element={<ProductListing />} />
+              <Route path="/product/:productId" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/offers" element={<Offers />} />
 
-            {/* Admin Routes */}
-            <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/admin/login" element={<Navigate to="/admin" replace />} />
-            <Route path="/admin/dashboard" element={
-              <AdminRoute><AdminDashboard /></AdminRoute>
-            } />
-            <Route path="/admin/products" element={
-              <AdminRoute><ProductManager /></AdminRoute>
-            } />
-            <Route path="/admin/categories" element={
-              <AdminRoute><CategoryManager /></AdminRoute>
-            } />
-            <Route path="/admin/settings" element={
-              <AdminRoute><SettingsManager /></AdminRoute>
-            } />
+              {/* Admin Routes */}
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/admin/login" element={<Navigate to="/admin" replace />} />
+              <Route path="/admin/dashboard" element={
+                <AdminRoute><AdminDashboard /></AdminRoute>
+              } />
+              <Route path="/admin/products" element={
+                <AdminRoute><ProductManager /></AdminRoute>
+              } />
+              <Route path="/admin/categories" element={
+                <AdminRoute><CategoryManager /></AdminRoute>
+              } />
+              <Route path="/admin/settings" element={
+                <AdminRoute><SettingsManager /></AdminRoute>
+              } />
 
-            {/* Fallback */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-          <WhatsAppFloat />
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+            <WhatsAppFloat />
+          </SwipeNavigationWrapper>
         </CartProvider>
       </ProductProvider>
     </BrowserRouter>
