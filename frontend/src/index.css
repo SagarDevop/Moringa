@@ -520,7 +520,7 @@ html:not(.icons-loaded) .material-symbols-outlined * {
 @media (max-width: 768px) {
   .app-container {
     max-width: 480px;
-    padding-bottom: 85px;
+    padding-bottom: 68px;
   }
 }
 
@@ -606,7 +606,7 @@ html:not(.icons-loaded) .material-symbols-outlined * {
 
 @media (max-width: 768px) {
   .whatsapp-float {
-    bottom: 95px;
+    bottom: 74px;
     right: 16px;
   }
 }

@@ -166,7 +166,7 @@ export default function Offers() {
 
       <TopAppBar title="Exclusive Voucher Offers" showBack={true} />
 
-      <main className="botanis-main-content" style={{ padding: '20px 20px 40px' }}>
+      <main className="botanis-main-content" style={{ padding: '16px 16px 12px' }}>
         
         {/* Page Header Banner */}
         <div style={{

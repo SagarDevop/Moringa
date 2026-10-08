@@ -12,7 +12,7 @@ export default function About() {
     <div className="app-container" style={{ background: '#F8F6F0', minHeight: '100vh' }}>
       <TopAppBar title="About Botanís" showBack={true} />
 
-      <main className="botanis-main-content" style={{ padding: '16px 20px 40px' }}>
+      <main className="botanis-main-content" style={{ padding: '16px 16px 12px' }}>
         
         {/* Hero Banner Section */}
         <section style={{ marginBottom: '28px' }}>

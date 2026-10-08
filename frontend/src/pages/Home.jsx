@@ -497,7 +497,7 @@ export default function Home() {
         {/* =========================================================================
             7. WHATSAPP SUPPORT CTA
             ========================================================================= */}
-        <section style={{ marginBottom: '28px' }}>
+        <section style={{ marginBottom: '10px' }}>
           <div style={{
             background: '#1C3B2B',
             borderRadius: '24px',
