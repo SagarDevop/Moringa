@@ -8,6 +8,7 @@ import BottomNav from '../components/BottomNav';
 import CartBar from '../components/CartBar';
 import Footer from '../components/Footer';
 import Toast from '../components/Toast';
+import HeroBannerCarousel from '../components/HeroBannerCarousel';
 import { BOTANIS_PRODUCTS } from '../data/botanisProducts';
 
 export default function Home() {
@@ -134,154 +135,9 @@ export default function Home() {
         </section>
 
         {/* =========================================================================
-            3. HERO BANNER
+            3. DYNAMIC HERO BANNER CAROUSEL
             ========================================================================= */}
-        <section style={{ marginBottom: '24px' }}>
-          <div 
-            className="botanis-hero-card"
-            style={{
-              position: 'relative',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              background: 'linear-gradient(135deg, #EAF2E8 0%, #D8E8D5 100%)',
-              border: '1px solid #D2E2CF',
-              padding: '22px 20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              minHeight: '200px'
-            }}
-          >
-            {/* Left Content */}
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '8px',
-              maxWidth: '60%',
-              zIndex: 2
-            }}>
-              <span style={{
-                fontSize: '10px',
-                fontWeight: 800,
-                letterSpacing: '0.12em',
-                color: '#2E7D32',
-                textTransform: 'uppercase'
-              }}>
-                PURE • NATURAL • TRUSTED
-              </span>
-
-              <h2 
-                className="botanis-hero-headline"
-                style={{
-                  color: '#1C3B2B',
-                  margin: 0,
-                  fontSize: '22px',
-                  fontWeight: 900,
-                  lineHeight: 1.15,
-                  letterSpacing: '-0.02em',
-                  fontFamily: "'Playfair Display', Georgia, serif"
-                }}
-              >
-                Your Trusted Path to Healthy Living
-              </h2>
-
-              <p 
-                className="botanis-hero-subtext"
-                style={{
-                  fontSize: '12px',
-                  color: '#475467',
-                  margin: '2px 0 10px',
-                  fontWeight: 500,
-                  lineHeight: 1.3
-                }}
-              >
-                Nature's goodness, for a better you.
-              </p>
-
-              <button
-                className="botanis-hero-btn"
-                onClick={(e) => { e.stopPropagation(); navigate('/categories'); }}
-                style={{
-                  background: '#1C3B2B',
-                  color: '#FFFFFF',
-                  padding: '10px 20px',
-                  borderRadius: '25px',
-                  fontWeight: 700,
-                  fontSize: '12px',
-                  width: 'fit-content',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  boxShadow: '0 4px 12px rgba(28, 59, 43, 0.2)',
-                  cursor: 'pointer'
-                }}
-              >
-                <span>Explore Our Range</span>
-                <span className="material-symbols-outlined" style={{ fontSize: 16 }}>arrow_forward</span>
-              </button>
-            </div>
-
-            {/* Right Product Graphic */}
-            <div style={{
-              width: '36%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative'
-            }}>
-              {/* 100% Natural Seal Badge */}
-              <div style={{
-                position: 'absolute',
-                top: '-10px',
-                right: '-4px',
-                background: '#FFFFFF',
-                borderRadius: '50%',
-                width: '48px',
-                height: '48px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
-                border: '1px solid #D2E2CF',
-                zIndex: 3,
-                textAlign: 'center',
-                padding: '2px'
-              }}>
-                <span className="material-symbols-outlined" style={{ fontSize: 16, color: '#2E7D32' }}>
-                  eco
-                </span>
-                <span style={{ fontSize: '7.5px', fontWeight: 900, color: '#1C3B2B', lineHeight: 1 }}>
-                  100%<br />NATURAL
-                </span>
-              </div>
-
-              {/* Hero Image */}
-              <img
-                src="/images/botanis/hero_moringa.jpg"
-                alt="Botanís Moringa Leaf Powder Superfood"
-                style={{
-                  width: '100%',
-                  maxHeight: '170px',
-                  objectFit: 'cover',
-                  borderRadius: '16px',
-                  boxShadow: '0 6px 18px rgba(28, 59, 43, 0.15)'
-                }}
-                onError={(e) => {
-                  e.target.src = 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500';
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Carousel Pagination Dots */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '6px', marginTop: '12px' }}>
-            <div style={{ width: 18, height: 5, borderRadius: 3, background: '#1C3B2B' }} />
-            <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#D2E2CF' }} />
-            <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#D2E2CF' }} />
-            <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#D2E2CF' }} />
-          </div>
-        </section>
+        <HeroBannerCarousel />
 
         {/* =========================================================================
             4. TRUST / BRAND BENEFITS STRIP
@@ -371,22 +227,6 @@ export default function Home() {
                 Wellness in every form
               </span>
             </div>
-
-            <button
-              onClick={() => navigate('/categories')}
-              style={{
-                color: '#1C3B2B',
-                fontSize: '12px',
-                fontWeight: 750,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '2px',
-                cursor: 'pointer'
-              }}
-            >
-              <span>View All</span>
-              <span className="material-symbols-outlined" style={{ fontSize: 16 }}>arrow_forward</span>
-            </button>
           </div>
 
           {/* Products Grid: 3 per row on mobile, 5 per row on desktop */}
