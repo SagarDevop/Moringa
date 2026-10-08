@@ -22,9 +22,7 @@ export default function TopAppBar({
       alignItems: 'center',
       padding: '12px 16px',
       width: '100%',
-      background: transparent ? 'rgba(248,246,240,0.85)' : '#F8F6F0',
-      backdropFilter: 'blur(12px)',
-      WebkitBackdropFilter: 'blur(12px)',
+      background: '#F8F6F0',
       borderBottom: '1px solid #EAE6DC',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>

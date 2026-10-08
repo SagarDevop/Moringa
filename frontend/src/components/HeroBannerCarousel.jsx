@@ -9,7 +9,7 @@ const HERO_SLIDES = [
     description: 'Boost natural energy & immunity directly from certified organic farms.',
     btnText: 'Shop Moringa',
     btnAction: '/product/botanis_moringa_leaf_powder',
-    image: '/images/botanis/hero_moringa.jpg',
+    image: '/images/botanis/hero_moringa.webp',
     badgeText: '100% ORGANIC',
     badgeIcon: 'eco'
   },
@@ -20,7 +20,7 @@ const HERO_SLIDES = [
     description: 'Use code BOTANIS15 at checkout for instant wellness savings.',
     btnText: 'Claim Voucher',
     btnAction: '/offers',
-    image: '/images/botanis/promo_banner.jpg',
+    image: '/images/botanis/promo_banner.webp',
     badgeText: 'SAVE 15%',
     badgeIcon: 'local_offer'
   },
@@ -31,7 +31,7 @@ const HERO_SLIDES = [
     description: 'Reduce daily stress, boost stamina & revive your natural vitality.',
     btnText: 'Shop Ashwagandha',
     btnAction: '/product/botanis_ashwagandha_tablets',
-    image: '/images/botanis/ashwagandha_tablets.jpg',
+    image: '/images/botanis/ashwagandha_tablets.webp',
     badgeText: 'BESTSELLER',
     badgeIcon: 'bolt'
   },
@@ -42,7 +42,7 @@ const HERO_SLIDES = [
     description: 'Convenient daily green superfood tablets for health & immunity.',
     btnText: 'Explore Range',
     btnAction: '/product/botanis_moringa_leaf_tablets',
-    image: '/images/botanis/moringa_leaf_tablets.jpg',
+    image: '/images/botanis/moringa_leaf_tablets.webp',
     badgeText: 'PURE EXTRACT',
     badgeIcon: 'verified'
   },
@@ -53,7 +53,7 @@ const HERO_SLIDES = [
     description: '100% plant-based, lab-tested & chemical-free organic care.',
     btnText: 'Learn About Us',
     btnAction: '/about',
-    image: '/images/botanis/hero_moringa.jpg',
+    image: '/images/botanis/hero_moringa.webp',
     badgeText: 'GUARANTEED',
     badgeIcon: 'shield'
   }

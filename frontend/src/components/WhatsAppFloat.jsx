@@ -8,8 +8,8 @@ export default function WhatsAppFloat() {
   const { whatsappNumber } = useProducts();
   const { totalItems } = useCart();
 
-  // Hide the WhatsApp float button on admin-facing pages or checkout
-  if (location.pathname.startsWith('/admin') || location.pathname === '/checkout') {
+  // Hide the WhatsApp float button on checkout
+  if (location.pathname === '/checkout') {
     return null;
   }
 

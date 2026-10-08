@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
-import ProductCard from '../components/ProductCard';
+import BotanisProductCard from '../components/BotanisProductCard';
 import BottomNav from '../components/BottomNav';
 import CartBar from '../components/CartBar';
 
@@ -17,7 +17,7 @@ export default function Search() {
   }, []);
 
   useEffect(() => {
-    if (query.trim().length >= 2) {
+    if (query.trim().length >= 1) {
       setResults(searchProducts(query));
     } else {
       setResults([]);
@@ -29,34 +29,35 @@ export default function Search() {
       {/* Search Header */}
       <header style={{
         position: 'sticky', top: 0, zIndex: 'var(--z-header)',
-        padding: 'var(--space-md) var(--container-padding)',
-        background: 'var(--surface)',
-        display: 'flex', alignItems: 'center', gap: 'var(--space-md)',
+        padding: '12px 16px',
+        background: '#ffffff',
+        display: 'flex', alignItems: 'center', gap: '12px',
+        borderBottom: '1px solid #EAE6DC'
       }}>
-        <button onClick={() => navigate(-1)}>
-          <span className="material-symbols-outlined" style={{ color: 'var(--primary)' }}>arrow_back</span>
+        <button onClick={() => navigate(-1)} style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+          <span className="material-symbols-outlined" style={{ color: '#1C3B2B', fontSize: 22 }}>arrow_back</span>
         </button>
         <div style={{ position: 'relative', flexGrow: 1 }}>
           <div style={{
-            position: 'absolute', left: 'var(--space-md)', top: '50%',
+            position: 'absolute', left: '12px', top: '50%',
             transform: 'translateY(-50%)', pointerEvents: 'none',
           }}>
-            <span className="material-symbols-outlined" style={{ color: 'var(--outline)', fontSize: 20 }}>search</span>
+            <span className="material-symbols-outlined" style={{ color: '#768379', fontSize: 20 }}>search</span>
           </div>
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={e => setQuery(e.target.value)}
-            placeholder="Search vegetables, fruits..."
+            placeholder="Search Moringa, Ashwagandha..."
             style={{
               width: '100%',
-              padding: '12px 16px 12px 44px',
-              background: 'var(--surface-container-low)',
-              borderRadius: 'var(--radius-full)',
-              fontSize: 16,
-              color: 'var(--on-surface)',
-              boxShadow: 'var(--shadow-sm)',
+              padding: '10px 16px 10px 40px',
+              background: '#F8F6F0',
+              borderRadius: '50px',
+              fontSize: 14,
+              color: '#1C3B2B',
+              border: '1px solid #EAE6DC'
             }}
           />
           {query && (
@@ -65,53 +66,52 @@ export default function Search() {
               style={{
                 position: 'absolute', right: 12, top: '50%',
                 transform: 'translateY(-50%)',
+                border: 'none', background: 'transparent', cursor: 'pointer'
               }}
             >
-              <span className="material-symbols-outlined" style={{ fontSize: 20, color: 'var(--outline)' }}>close</span>
+              <span className="material-symbols-outlined" style={{ fontSize: 20, color: '#768379' }}>close</span>
             </button>
           )}
         </div>
       </header>
 
-      <main style={{ padding: 'var(--space-md) var(--container-padding)' }}>
-        {query.length < 2 ? (
+      <main style={{ padding: '16px 16px 30px' }}>
+        {query.length < 1 ? (
           <div style={{
-            textAlign: 'center', padding: 'var(--space-2xl)',
-            color: 'var(--on-surface-variant)',
+            textAlign: 'center', padding: '40px 16px',
+            color: '#768379',
           }}>
-            <span className="material-symbols-outlined" style={{ fontSize: 64, color: 'var(--outline-variant)', display: 'block', marginBottom: 'var(--space-md)' }}>
+            <span className="material-symbols-outlined" style={{ fontSize: 56, color: '#C29B38', display: 'block', marginBottom: '12px' }}>
               search
             </span>
-            <p className="text-body-lg">Type to search for products</p>
+            <p style={{ fontSize: 14, fontWeight: 600 }}>Type to search Botanís organic superfoods</p>
           </div>
         ) : results.length === 0 ? (
           <div style={{
-            textAlign: 'center', padding: 'var(--space-2xl)',
-            color: 'var(--on-surface-variant)',
+            textAlign: 'center', padding: '40px 16px',
+            color: '#768379',
           }}>
-            <span className="material-symbols-outlined" style={{ fontSize: 64, color: 'var(--outline-variant)', display: 'block', marginBottom: 'var(--space-md)' }}>
+            <span className="material-symbols-outlined" style={{ fontSize: 56, color: '#768379', display: 'block', marginBottom: '12px' }}>
               search_off
             </span>
-            <p className="text-title-md">No products found</p>
-            <p className="text-body-md" style={{ color: 'var(--outline)' }}>
-              Try a different search term
+            <p style={{ fontSize: 15, fontWeight: 800, color: '#1C3B2B' }}>No products found</p>
+            <p style={{ fontSize: 13, color: '#768379' }}>
+              Try searching for Moringa, Powder, or Tablets
             </p>
           </div>
         ) : (
           <>
-            <p className="text-label-sm" style={{
-              color: 'var(--on-surface-variant)',
-              marginBottom: 'var(--space-md)',
+            <p style={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: '#2E7D32',
+              marginBottom: '12px',
             }}>
-              {results.length} result{results.length !== 1 ? 's' : ''} found
+              {results.length} product{results.length !== 1 ? 's' : ''} found
             </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: 'var(--grid-gutter)',
-            }}>
+            <div className="botanis-products-grid">
               {results.map(product => (
-                <ProductCard key={product.id} product={product} />
+                <BotanisProductCard key={product.id} product={product} />
               ))}
             </div>
           </>

@@ -1,25 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Logo({ type = 'full', size = 36, style = {} }) {
   const navigate = useNavigate();
-  const [clickCount, setClickCount] = useState(0);
-
   const handleLogoClick = (e) => {
     e.stopPropagation();
-    setClickCount(prev => {
-      const nextCount = prev + 1;
-      if (nextCount >= 5) {
-        navigate('/admin');
-        return 0;
-      }
-      return nextCount;
-    });
-
-    if (window.logoClickTimeout) clearTimeout(window.logoClickTimeout);
-    window.logoClickTimeout = setTimeout(() => {
-      setClickCount(0);
-    }, 2000);
+    navigate('/');
   };
 
   if (type === 'mark') {

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 const CartContext = createContext();
 
-const STORAGE_KEY = 'bandamart_cart';
+const STORAGE_KEY = 'botanis_cart';
 
 function loadCart() {
   try {

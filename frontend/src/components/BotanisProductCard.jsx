@@ -72,6 +72,8 @@ export default function BotanisProductCard({ product }) {
         <img
           src={product.image}
           alt={product.name}
+          width="160"
+          height="160"
           loading="lazy"
           decoding="async"
           style={{
@@ -88,13 +90,12 @@ export default function BotanisProductCard({ product }) {
             position: 'absolute',
             bottom: 6,
             left: 6,
-            background: 'rgba(28, 59, 43, 0.85)',
+            background: 'rgba(28, 59, 43, 0.9)',
             color: '#FFFFFF',
             fontSize: '9px',
             fontWeight: 750,
             padding: '2px 6px',
-            borderRadius: '4px',
-            backdropFilter: 'blur(4px)'
+            borderRadius: '4px'
           }}>
             {product.unit}
           </span>

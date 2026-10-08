@@ -148,7 +148,7 @@ export default function Footer() {
             <h4 style={columnTitleStyle}>Quick Links</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <FooterLink onClick={() => navigate('/')}>Home</FooterLink>
-              <FooterLink onClick={() => navigate('/categories')}>Wellness Categories</FooterLink>
+              <FooterLink onClick={() => navigate('/offers')}>Special Offers</FooterLink>
               <FooterLink onClick={() => navigate('/about')}>About Botanís</FooterLink>
               <FooterLink onClick={(e) => handlePlaceholderLink(e, 'Track Order')}>Track Order</FooterLink>
               <FooterLink onClick={(e) => handlePlaceholderLink(e, 'Privacy Policy')}>Privacy Policy</FooterLink>
@@ -164,7 +164,6 @@ export default function Footer() {
               <FooterLink onClick={(e) => handlePlaceholderLink(e, 'Quality Assurance')}>Quality Guarantee</FooterLink>
               <FooterLink onClick={(e) => handlePlaceholderLink(e, 'Shipping Policy')}>Shipping Policy</FooterLink>
               <FooterLink onClick={(e) => handlePlaceholderLink(e, 'Return Policy')}>Return Policy</FooterLink>
-              <FooterLink onClick={() => navigate('/admin')}>Admin Portal</FooterLink>
             </div>
           </div>
 

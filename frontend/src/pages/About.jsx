@@ -91,8 +91,10 @@ export default function About() {
               position: 'relative'
             }}>
               <img
-                src="/images/botanis/hero_moringa.jpg"
+                src="/images/botanis/hero_moringa.webp"
                 alt="Organic Moringa Sourcing"
+                loading="lazy"
+                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
@@ -121,8 +123,10 @@ export default function About() {
               position: 'relative'
             }}>
               <img
-                src="/images/botanis/promo_banner.jpg"
+                src="/images/botanis/promo_banner.webp"
                 alt="Quality Assured Supplement Formulations"
+                loading="lazy"
+                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
@@ -151,8 +155,10 @@ export default function About() {
               position: 'relative'
             }}>
               <img
-                src="/images/botanis/moringa_leaf_tablets.jpg"
+                src="/images/botanis/moringa_leaf_tablets.webp"
                 alt="Botanís Daily Health Commitment"
+                loading="lazy"
+                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#F8F6F0' }}
               />
             </div>

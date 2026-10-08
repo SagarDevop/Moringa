@@ -74,7 +74,7 @@ export default function Home() {
         {/* Top Right: Profile/Account icon only */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <button
-            onClick={() => navigate('/admin')}
+            onClick={() => navigate('/about')}
             style={{
               width: 40,
               height: 40,
@@ -257,7 +257,7 @@ export default function Home() {
               position: 'absolute',
               inset: 0,
               opacity: 0.25,
-              backgroundImage: `url('/images/botanis/promo_banner.jpg')`,
+              backgroundImage: `url('/images/botanis/promo_banner.webp')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               mixBlendMode: 'overlay'
@@ -289,11 +289,10 @@ export default function Home() {
                 <span style={{
                   fontSize: '9.5px',
                   fontWeight: 700,
-                  background: 'rgba(255,255,255,0.15)',
+                  background: 'rgba(255,255,255,0.2)',
                   color: '#FFFFFF',
                   padding: '5px 10px',
                   borderRadius: '14px',
-                  backdropFilter: 'blur(4px)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '4px'
@@ -304,11 +303,10 @@ export default function Home() {
                 <span style={{
                   fontSize: '9.5px',
                   fontWeight: 700,
-                  background: 'rgba(255,255,255,0.15)',
+                  background: 'rgba(255,255,255,0.2)',
                   color: '#FFFFFF',
                   padding: '5px 10px',
                   borderRadius: '14px',
-                  backdropFilter: 'blur(4px)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '4px'
@@ -321,8 +319,10 @@ export default function Home() {
 
             <div style={{ position: 'relative', zIndex: 2, width: '28%' }}>
               <img
-                src="/images/botanis/moringa_leaf_powder.jpg"
+                src="/images/botanis/moringa_leaf_powder.webp"
                 alt="Natural Moringa Powder"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   borderRadius: '16px',

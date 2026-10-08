@@ -1,10 +1,10 @@
 /* ============================================
-   BandaMart — Organic Vitality Design System
+   Botanís — Organic Vitality Design System
    Extracted from Stitch Project 8138326070276916443
    ============================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Inter:wght@400;600;700&display=swap');
 
 /* --- CSS Custom Properties --- */
 :root {
@@ -630,46 +630,7 @@ html:not(.icons-loaded) .material-symbols-outlined * {
   }
 }
 
-/* Admin Responsive Forms */
-.admin-price-unit-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--space-md);
-}
 
-.admin-variant-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 40px;
-  gap: 8px;
-  align-items: center;
-}
-
-@media (max-width: 480px) {
-  .admin-price-unit-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .admin-price-unit-row > div:last-child {
-    grid-column: span 2;
-  }
-
-  .admin-variant-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    padding: 10px;
-    background: var(--surface-container-low);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--outline-variant);
-  }
-  .admin-variant-row input:first-of-type {
-    grid-column: span 2;
-  }
-  .admin-variant-row button {
-    grid-column: span 2;
-    width: 100% !important;
-    height: 32px !important;
-  }
-}
 
 /* Hide Footer on Mobile View as requested */
 @media (max-width: 768px) {
