@@ -1,13 +1,15 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
+import { useCart } from '../context/CartContext';
 
 export default function WhatsAppFloat() {
   const location = useLocation();
   const { whatsappNumber } = useProducts();
+  const { totalItems } = useCart();
 
-  // Hide the WhatsApp float button on admin-facing pages
-  if (location.pathname.startsWith('/admin')) {
+  // Hide the WhatsApp float button on admin-facing pages or checkout
+  if (location.pathname.startsWith('/admin') || location.pathname === '/checkout') {
     return null;
   }
 
@@ -15,9 +17,11 @@ export default function WhatsAppFloat() {
     window.open(`https://wa.me/${whatsappNumber}`, '_blank');
   };
 
+  const hasCart = totalItems > 0 && location.pathname !== '/cart';
+
   return (
     <button 
-      className="whatsapp-float" 
+      className={`whatsapp-float ${hasCart ? 'has-cart' : ''}`} 
       onClick={handleClick} 
       aria-label="Chat on WhatsApp"
     >

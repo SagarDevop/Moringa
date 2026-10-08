@@ -56,10 +56,10 @@ export default function CartBar() {
   return (
     <div style={{
       position: 'fixed',
-      bottom: visible ? 68 : -80,
+      bottom: visible ? 68 : -90,
       left: '50%',
       transform: 'translateX(-50%)',
-      width: '92%',
+      width: 'calc(100% - 24px)',
       maxWidth: 440,
       zIndex: 'var(--z-cart-bar)',
       transition: 'bottom 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -70,42 +70,65 @@ export default function CartBar() {
           width: '100%',
           background: '#164b2b', // Premium forest green
           color: '#ffffff',
-          borderRadius: 'var(--radius-xl)',
+          borderRadius: '50px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '12px 16px',
-          boxShadow: '0 8px 24px rgba(22, 75, 43, 0.25)',
+          padding: '10px 14px',
+          boxShadow: '0 8px 24px rgba(22, 75, 43, 0.35)',
           cursor: 'pointer',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+          boxSizing: 'border-box'
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span className="material-symbols-outlined filled" style={{ fontSize: 22 }}>
-            shopping_cart
-          </span>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', lineHeight: 1.2 }}>
-            <span style={{ fontSize: 13, fontWeight: 700 }}>
-              {totalItems} {totalItems === 1 ? 'item' : 'items'}
-              {totalSavings > 0 && <span style={{ fontWeight: 400, opacity: 0.9 }}> | You save ₹{totalSavings}</span>}
+        {/* Left Section: Icon + Item Count + Savings on 1 Single Line */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap', minWidth: 0, overflow: 'hidden' }}>
+          <div style={{
+            width: 32,
+            height: 32,
+            borderRadius: '50%',
+            background: 'rgba(255, 255, 255, 0.15)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <span className="material-symbols-outlined filled" style={{ fontSize: 18, color: '#C29B38' }}>
+              shopping_cart
             </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <span style={{ fontSize: 12.5, fontWeight: 800 }}>
+              {totalItems} {totalItems === 1 ? 'item' : 'items'}
+            </span>
+            {totalSavings > 0 && (
+              <span style={{ fontSize: 11, fontWeight: 600, color: '#D2E2CF', whiteSpace: 'nowrap' }}>
+                | Save ₹{totalSavings}
+              </span>
+            )}
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span style={{ fontSize: 16, fontWeight: 800 }}>
+        {/* Right Section: Total Price + View Cart Button */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
+          <span style={{ fontSize: 15, fontWeight: 900, color: '#FFFFFF', letterSpacing: '-0.01em' }}>
             ₹{totalPrice}
           </span>
           <div style={{
-            background: '#ffffff',
+            background: '#FFFFFF',
             color: '#164b2b',
-            borderRadius: 'var(--radius-full)',
-            padding: '6px 14px',
-            fontSize: 12,
-            fontWeight: 800,
-            boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+            borderRadius: '20px',
+            padding: '6px 12px',
+            fontSize: 11.5,
+            fontWeight: 850,
+            boxShadow: '0 2px 6px rgba(0,0,0,0.12)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '2px',
+            whiteSpace: 'nowrap'
           }}>
-            View Cart
+            <span>View Cart</span>
+            <span className="material-symbols-outlined" style={{ fontSize: 14 }}>arrow_forward</span>
           </div>
         </div>
       </div>

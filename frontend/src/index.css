@@ -599,15 +599,18 @@ html:not(.icons-loaded) .material-symbols-outlined * {
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
   z-index: 95;
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: bottom 0.25s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
   border: none;
   outline: none;
 }
 
 @media (max-width: 768px) {
   .whatsapp-float {
-    bottom: 90px;
+    bottom: 74px;
     right: 16px;
+  }
+  .whatsapp-float.has-cart {
+    bottom: 132px;
   }
 }
 
