@@ -265,24 +265,24 @@ export default function Home() {
 
             <div style={{ position: 'relative', zIndex: 2, maxWidth: '65%' }}>
               <h3 style={{
-                fontSize: '20px',
-                fontWeight: 900,
-                margin: '0 0 6px',
+                fontSize: '18px',
+                fontWeight: 800,
+                margin: '0 0 4px',
                 color: '#FFFFFF',
                 fontFamily: "'Playfair Display', Georgia, serif",
                 letterSpacing: '-0.01em'
               }}>
-                Small Steps.<br />Big Changes.
+                Pure & Natural
               </h3>
 
               <p style={{
-                fontSize: '12px',
+                fontSize: '11.5px',
                 color: '#EAF2E8',
-                margin: '0 0 14px',
+                margin: '0 0 10px',
                 fontWeight: 450,
-                lineHeight: 1.35
+                lineHeight: 1.3
               }}>
-                Natural wellness for a healthier tomorrow.
+                100% Organic Superfoods
               </p>
 
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -291,28 +291,14 @@ export default function Home() {
                   fontWeight: 700,
                   background: 'rgba(255,255,255,0.2)',
                   color: '#FFFFFF',
-                  padding: '5px 10px',
+                  padding: '4px 10px',
                   borderRadius: '14px',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '4px'
                 }}>
                   <span className="material-symbols-outlined" style={{ fontSize: 12 }}>verified</span>
-                  Trusted Natural Care
-                </span>
-                <span style={{
-                  fontSize: '9.5px',
-                  fontWeight: 700,
-                  background: 'rgba(255,255,255,0.2)',
-                  color: '#FFFFFF',
-                  padding: '5px 10px',
-                  borderRadius: '14px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px'
-                }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: 12 }}>favorite</span>
-                  Better Health Every Day
+                  Lab Tested Organic
                 </span>
               </div>
             </div>
