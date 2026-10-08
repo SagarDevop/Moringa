@@ -606,7 +606,7 @@ html:not(.icons-loaded) .material-symbols-outlined * {
 
 @media (max-width: 768px) {
   .whatsapp-float {
-    bottom: 74px;
+    bottom: 90px;
     right: 16px;
   }
 }
